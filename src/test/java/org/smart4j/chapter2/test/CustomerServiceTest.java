@@ -4,9 +4,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.smart4j.chapter2.controller.CustomerServlet;
+import org.smart4j.chapter2.helper.DatabaseHelper;
 import org.smart4j.chapter2.model.Customer;
 import org.smart4j.chapter2.service.CustomerService;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,16 +17,18 @@ import java.util.Map;
  * 单元测试
  * Created by ZDD on 2017/5/13.
  */
-public class CustomerServletTest {
-    private final CustomerService customerService;
+public class CustomerServiceTest {
+    private final CustomerService customerService = new CustomerService();;
 
-    public CustomerServletTest(){
-        customerService = new CustomerService();
-    }
 
+
+    /**
+     * 初始化测试数据库，采用就近原则读取.properties文件
+     * @throws Exception
+     */
     @Before
-    public void init(){
-        //TODO 初始化数据库
+    public void init() throws Exception{
+        DatabaseHelper.executeSqlFile("sql/Customer_test_init.sql");
     }
 
     @Test

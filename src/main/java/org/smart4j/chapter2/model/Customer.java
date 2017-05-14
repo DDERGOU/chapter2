@@ -8,7 +8,7 @@ public class Customer {
     /**
      * ID
      */
-    private long id;
+    private long pk_id;
 
     /**
      * 客户名称
@@ -35,12 +35,12 @@ public class Customer {
      */
     private String remark;
 
-    public long getId() {
-        return id;
+    public long getPk_id() {
+        return pk_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPk_id(long pk_id) {
+        this.pk_id = pk_id;
     }
 
     public String getName() {
