@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>客户-列表</title>
-    <link href="WEB-INF/frame/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${BASE}/frame/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div class="container">
@@ -32,15 +32,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="customer" item="${customerList}">
+                <c:forEach var="customer" items="${customerList}">
                     <tr>
                         <th scope="row">${customer.name}</th>
                         <td>${customer.contact}</td>
                         <td>${customer.telephone}</td>
                         <td>@${customer.email}</td>
                         <td>
-                            <button type="button" class="btn btn-link" href="#">编辑</button>
-                            <button type="button" class="btn btn-link" href="#">删除</button>
+                            <a class="btn btn-link" href="#">编辑</a>
+                            <a class="btn btn-link" href="#">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <script src="WEB-INF/frame/jquery/js/jquery.js"></script>
-    <script src="WEB-INF/frame/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${BASE}/frame/jquery/js/jquery.js"></script>
+    <script src="${BASE}/frame/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
